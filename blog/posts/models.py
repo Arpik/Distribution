@@ -13,5 +13,7 @@ class Post(models.Model):
     comment_count = models.IntegerField(default=0)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.title
 
 
