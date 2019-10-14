@@ -86,8 +86,12 @@
             <div class="post-thumbnail"><a href="#"><img src="{{obj.thumbnail.url}}" alt="..." class="img-fluid"></a></div>
             <div class="post-details">
               <div class="post-meta d-flex justify-content-between">
-                <div class="date">20 May | 2016</div>
-                <div class="category"><a href="#">Business</a></div>
+                <div class="date">{% obj.timestamp %}</div>
+                <div class="category">
+                  {% for category in obj.categories.all %}
+                    <a href="#">{{ category.title }}</a>
+                  {% endfor %}
+                </div>
               </div><a href="post.html">
                 <h3 class="h4">Ways to remember your important ideas</h3></a>
               <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
