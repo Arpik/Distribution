@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Post
-from marketion.models import Signup
+from marketing.models import Signup
 
 def index(request):
     featured = Post.objects.filter(featured = True)
