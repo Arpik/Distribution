@@ -8,6 +8,9 @@ def index(request):
     
     if request.method == "POST":
         email = request.POST["email"]
+        new_signup = Signup()
+        new_signup.email = email
+        new_signup.save()
 
     context = {
         'object_list': featured,
