@@ -7,8 +7,8 @@ from marketing.models import Signup
 # Search
 
 def search(request):
-    post_list = Post.objects.all()
-    query = request.Get.get('q')
+    queryset = Post.objects.all()
+    query = request.GET.get('q')
     if query:
         queryset = queryset.filter(
             Q(title__icontains=query) |
@@ -18,7 +18,7 @@ def search(request):
         'queryset': queryset
     }
     return render(request, 'search_results.html', context)
-    
+
 # Categories count.
 
 def get_category_count():
