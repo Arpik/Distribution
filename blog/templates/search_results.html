@@ -4,6 +4,10 @@
 
 {% block content %}
 
-
+    <h3> This is the results of your search </h3>
+    {% for result in queryset %}
+        <a href = "{{ result.get_absolute_url }}">{{ result.title }}</a>
+        </br>
+    {% endfor %}
 
 {% endblock %}
